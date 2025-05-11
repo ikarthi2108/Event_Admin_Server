@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
 const venueSchema = new mongoose.Schema({
+  SearchValue: { type: String, default: 'venues' },
   name: { type: String, required: true },
   location: { type: String, required: true },
+  district: { type: String, required: true },
   address: { type: String, required: true },
   addressLink: String,
   price: { type: String, required: true },
@@ -22,6 +24,7 @@ const venueSchema = new mongoose.Schema({
   displayImages: [String],
   albumImages: [String],
   amenities: [String],
+  otherInformation: [String],
   paymentPolicies: [String],
   services: [{
     name: String,
